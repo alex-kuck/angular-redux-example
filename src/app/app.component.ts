@@ -18,6 +18,7 @@ export class AppComponent {
   title = 'app works!';
   @select() readonly count$: Observable<number>;
   @select(['todoStore', 'todos']) readonly todos$: Observable<Array<Todo>>;
+  doneTodos$ = this.todos$.map(todos => todos.filter(todo => todo.done));
   newTask = '';
 
   constructor(private ngRedux: NgRedux<IAppState>,

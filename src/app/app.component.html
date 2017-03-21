@@ -13,3 +13,10 @@
     <button (click)="toggle(todo.id)">Toggle</button>
   </li>
 </ul>
+
+<h2>Done TODOs</h2>
+<ul>
+  <li *ngFor="let todo of doneTodos$ | async">
+    {{todo.task}}
+  </li>
+</ul>
