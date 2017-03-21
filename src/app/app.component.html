@@ -1,3 +1,15 @@
 <h1>
   {{title}}
 </h1>
+<h2>Count: {{count$ | async}}</h2>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+
+<h2>TODOs</h2>
+<input [(ngModel)]="newTask"> <button (click)="create()">Add</button>
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    {{todo.task}}<span *ngIf="todo.done"> (done)</span>
+    <button (click)="toggle(todo.id)">Toggle</button>
+  </li>
+</ul>
