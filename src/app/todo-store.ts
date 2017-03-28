@@ -9,7 +9,8 @@ export interface TodoState {
 
 export class Todo {
     id: number;
-    task: string;
+    name: string;
+    description: string;
     done: boolean;
 }
 
@@ -22,7 +23,8 @@ export function todoReducer(lastState: TodoState = INITIAL_STATE, action): TodoS
     switch (action.type) {
         case TodoActions.CREATE_TODO:
             return Object.assign({}, {
-                todos: [...lastState.todos, { id: lastState.nextId, task: action.payload, done: false }],
+                todos: [...lastState.todos, 
+                { id: lastState.nextId, name: action.payload.name, description: action.payload.description, done: false }],
                 nextId: lastState.nextId + 1
             });
         case TodoActions.TOGGLE_TODO:
@@ -30,9 +32,10 @@ export function todoReducer(lastState: TodoState = INITIAL_STATE, action): TodoS
                 nextId: lastState.nextId,
                 todos: lastState.todos.map(todo => {
                     if (todo.id === action.payload) {
-                        return  Object.assign({}, {
+                        return Object.assign({}, {
                             id: todo.id,
-                            task: todo.task,
+                            name: todo.name,
+                            description: todo.description,
                             done: !todo.done
                         });
                     }

@@ -6,8 +6,8 @@ export class TodoActions {
     static CREATE_TODO = 'Create Todo';
     static TOGGLE_TODO = 'Toggle Todo';
 
-    create(task: string) {
-        return { type: TodoActions.CREATE_TODO, payload: task };
+    create(name: string, description: string) {
+        return { type: TodoActions.CREATE_TODO, payload: {name: name, description: description} };
     }
 
     toggle(id: number) {

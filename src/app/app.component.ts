@@ -15,32 +15,7 @@ import { CounterActions } from './counter-actions';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  @select() readonly count$: Observable<number>;
-  @select(['todoStore', 'todos']) readonly todos$: Observable<Array<Todo>>;
-  doneTodos$ = this.todos$.map(todos => todos.filter(todo => todo.done));
-  newTask = '';
+  title = 'Angular-Redux-Example';
 
-  constructor(private ngRedux: NgRedux<IAppState>,
-    private actions: CounterActions,
-    private todoActions: TodoActions) { }
-
-  increment() {
-    this.ngRedux.dispatch(this.actions.increment());
-  }
-
-  decrement() {
-    this.ngRedux.dispatch(this.actions.decrement());
-  }
-
-  create() {
-    if (this.newTask !== '') {
-      this.ngRedux.dispatch(this.todoActions.create(this.newTask));
-      this.newTask = '';
-    }
-  }
-
-  toggle(id: number) {
-    this.ngRedux.dispatch(this.todoActions.toggle(id));
-  }
+  constructor() { }
 }

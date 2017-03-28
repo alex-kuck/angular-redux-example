@@ -10,10 +10,16 @@ import { IAppState, rootReducer } from './store';
 import { CounterActions } from './counter-actions';
 
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
+import { CounterComponent } from './counter/counter.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateTodoComponent,
+    CounterComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,

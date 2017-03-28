@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h2>All ToDo's:</h2>
+    <ul>
+      <li *ngFor="let todo of allTodos$ | async" [ngClass]="{done: todo.done}" (click)="toggleTodo(todo.id)">
+        <p><b>{{todo.name}}</b></p>
+        <p>{{todo.description}}
+          <p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <h2>Done ToDo's:</h2>
+    <ul>
+      <li *ngFor="let todo of doneTodos$ | async">
+        <p><b>{{todo.name}}</b></p>
+        <p>{{todo.description}}
+          <p>
+      </li>
+    </ul>
+  </div>
+</div>

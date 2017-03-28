@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h2>TODOs</h2>
+    <p>
+      Create new ToDo:
+    </p>
+    <form>
+      <div class="form-group">
+        <label for="todoName">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="todoName" id="todoName" id="todoName" name="todoName" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="todoDescription">Description</label>
+        <input type="text" [(ngModel)]="todoDescription" class="form-control" id="todoDescription" name="todoDescription" placeholder="Description">
+      </div>
+      <button type="submit" (click)="submitClicked()" class="btn btn-default pull-right">Add</button>
+    </form>
+  </div>
+</div>

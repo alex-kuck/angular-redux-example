@@ -1,0 +1,7 @@
+li.done>p {
+    text-decoration: line-through;
+}
+
+p {
+    font-size: 20px;
+}
