@@ -32,10 +32,7 @@ export function todoReducer(lastState: TodoState = INITIAL_STATE, action): TodoS
                 nextId: lastState.nextId,
                 todos: lastState.todos.map(todo => {
                     if (todo.id === action.payload) {
-                        return Object.assign({}, {
-                            id: todo.id,
-                            name: todo.name,
-                            description: todo.description,
+                        return Object.assign({}, todo, {
                             done: !todo.done
                         });
                     }
