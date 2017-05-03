@@ -23,7 +23,7 @@ export function todoReducer(lastState: TodoState = INITIAL_STATE, action): TodoS
     switch (action.type) {
         case TodoActions.CREATE_TODO:
             return Object.assign({}, {
-                todos: [...lastState.todos, 
+                todos: [...lastState.todos,
                 { id: lastState.nextId, name: action.payload.name, description: action.payload.description, done: false }],
                 nextId: lastState.nextId + 1
             });
